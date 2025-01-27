@@ -25,11 +25,20 @@ function adicionarAmigo(){
     if(nome == '' || contemNumero(nome)){
         alert('Por favor, insira um nome valido.');
     }else if(nome.length>1){
-        alert('Cadastrado com sucesso.');
+        // alert('Cadastrado com sucesso.');
         amigos.push(nome);
         inputNome.value = '';
         listaAmigos();
     }else{
         alert('Por favor, insira um nome.');
+    }
+}
+
+function sortearAmigo(){
+    if(amigos.length>0){
+        let resultado = document.getElementById('resultado')
+        let indiceAleatorio = parseInt(Math.random() * amigos.length);
+        let amigoSorteado = amigos[indiceAleatorio];
+        resultado.innerHTML = amigoSorteado;
     }
 }
